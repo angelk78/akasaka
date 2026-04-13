@@ -1,0 +1,236 @@
+<?php
+
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package WordPress
+ * @subpackage akasaka
+ * @since 1.0.0
+ */
+global $post;
+
+if (is_home()) {
+    $title = get_bloginfo('name');
+    $description = get_bloginfo('description');
+} elseif (is_page('tokishi')) {
+    $title = '岐阜県土岐市の外構、エクステリアなら赤坂造園へ！';
+} elseif (is_page('kasugai')) {
+    $title = '春日井の外構、エクステリア工事なら赤坂造園へ！';
+    $description = '春日井で外構工事・エクステリア工事を施工しております、赤坂造園です。皆様の外構工事を精一杯お手伝い致します。';
+} elseif (is_page('mizunami')) {
+    $title = '瑞浪市で外構・エクステリア工事のことなら赤坂造園にご相談ください';
+    $description = '瑞浪市で外構工事・エクステリア工事を施工しております、赤坂造園です。皆様の外構工事を精一杯お手伝い致します。';
+} elseif (is_page('kanishi')) {
+    $title = '岐阜県可児市の外構・エクステリアのお手伝いをいたします 赤坂造園';
+    $description = '可児市で外構・エクステリア(新築外構、リフォーム外構、エクステリア工事、芝生、人工芝）を施工しております、赤坂造園です。皆様の外構工事を精一杯お手伝い致します。';
+} elseif (is_page() || is_single()) {
+    $title = !empty($post->post_title) ? $post->post_title . ' | 赤坂造園 岐阜県多治見市、可児、土岐、春日井│エクステリア外構&ガーデン(造園)設計施工│' : '';
+} elseif (is_archive()) {
+    $title = single_cat_title('', false) . ' | 赤坂造園 岐阜県多治見市、可児、土岐、春日井│エクステリア外構&ガーデン(造園)設計施工│';
+} else {
+    $title = !empty($post->post_title) ? $post->post_title : '';
+    $description = '';
+}
+?>
+<!doctype html>
+<html <?php language_attributes(); ?>>
+
+<head>
+    <title><?php echo $title; ?></title>
+    <meta charset="<?php bloginfo('charset'); ?>" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="株式会社 赤坂造園">
+    <meta name="thumbnail" content="https://akasakazouen.com/message/wp-content/themes/akasaka/resources/images/thumb.jpg" />
+    <meta name="format-detection" content="telephone=no">
+    <meta itemprop="description" name="description" content="<?php echo $description; ?>" />
+    <link rel="profile" href="https://gmpg.org/xfn/11" />
+    <!-- Bootstrap Core CSS -->
+    <link href="<?= ASSETS_PATH ?>resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= ASSETS_PATH ?>resources/vendor/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?= ASSETS_PATH ?>resources/vendor/WOW-master/css/libs/animate.css" rel="stylesheet">
+    <link href="<?= ASSETS_PATH ?>resources/vendor/slick/slick.css" rel="stylesheet">
+    <link href="<?= ASSETS_PATH ?>resources/vendor/slick/slick-theme.css" rel="stylesheet">
+    <link href="<?= ASSETS_PATH ?>resources/vendor/fancybox/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="<?= ASSETS_PATH ?>resources/vendor/loader/css/akasakaload.css" rel="stylesheet">
+    <link href="<?= ASSETS_PATH ?>resources/vendor/loader/css/animation.css" rel="stylesheet">
+    <link href="<?= ASSETS_PATH ?>resources/vendor/fontello/css/akasaka.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="<?= ASSETS_PATH ?>resources/css/main.css" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137019506-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-137019506-1');
+    </script>
+    <link rel="shortcut icon" href="https://akasakazouen.com/message/wp-content/themes/akasaka/resources/images/favicon2.ico">
+    <link rel="apple-touch-icon" href="https://akasakazouen.com/message/wp-content/themes/akasaka/resources/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="https://akasakazouen.com/message/wp-content/themes/akasaka/resources/images/android-chrome-256x256.png">
+    <?php wp_head(); ?>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Landscaper",
+  "@id": "https://akasakazouen.com/#organization",
+  "name": "株式会社 赤坂造園",
+  "alternateName": [
+    "赤坂造園",
+    "akasakazouen"
+  ],
+  "description": "赤坂造園は多治見、春日井、可児、瑞浪、岐阜を中心に外構、エクステリア、カーポート、ウッドデッキなどを施工する外構会社です。",
+  "url": "https://akasakazouen.com/",
+  "logo": "https://akasakazouen.com/message/wp-content/themes/akasaka/resources/images/logo/logo2.png",
+  "image": "https://akasakazouen.com/message/wp-content/themes/akasaka/resources/images/index/0108_01.png",
+  "foundingDate": "2015-10-05",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "宝町11-7",
+    "addressLocality": "多治見市",
+    "addressRegion": "岐阜県",
+    "postalCode": "507-0054",
+    "addressCountry": "JP"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "35.33742",
+    "longitude": "137.12455"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "telephone": "+81-572-22-8386",
+    "faxNumber": "+81-572-25-8838",
+    "areaServed": [
+      "JP-21"
+    ],
+    "availableLanguage": [
+      "Japanese"
+    ]
+  },
+  "sameAs": [
+    "https://www.instagram.com/akasakazouen/"
+  ],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "多治見市"
+    },
+    {
+      "@type": "City",
+      "name": "春日井市"
+    },
+    {
+      "@type": "City",
+      "name": "可児市"
+    },
+    {
+      "@type": "City",
+      "name": "瑞浪市"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "岐阜"
+    }
+  ],
+  "serviceOffered": [
+    {
+      "@type": "Service",
+      "name": "外構工事",
+      "description": "門扉、フェンス、アプローチなどの外構工事全般を承ります。"
+    },
+    {
+      "@type": "Service",
+      "name": "エクステリア工事",
+      "description": "カーポート、ウッドデッキ、テラスなど、住まいの外観を彩るエクステリアを施工します。"
+    },
+    {
+      "@type": "Service",
+      "name": "造園・庭園管理",
+      "description": "庭木の剪定から庭園の設計・施工まで、お庭に関するご相談を承ります。"
+    }
+  ]
+}
+</script>
+	
+	<meta name="google-site-verification" content="JSWJK5kTgJrEBrdVgYNrJYai0JzWTXPB3hCa72KuXXo" />
+
+</head>
+
+<body>
+    <!-- <div class="page-loader">
+        <div class="loader">Loading...</div>
+    </div> -->
+    <section class="main">
+        <header class="header">
+            <div class="header-navbar">
+                <nav class="navbar navbar-inverse" id="menu" role="navigation">
+                    <div class="container padding-0">
+                        <div class="navbar-collapse1">
+                            <div class="logo">
+                                <a href="<?= home_url() ?>"><img src="<?= ASSETS_PATH ?>resources/images/logo/logo2.png"></a>
+                                <p>
+                                    株式会社 赤坂造園　TEL / 0572-22-8386 <br>
+                                    岐阜県多治見市宝町11丁目7番地
+                                </p>
+                            </div>
+
+                            <ul class="nav navbar-nav ed-ul" id="open-menu">
+                                <li>
+                                    <a href="<?= home_url('/contact') ?>">お問い合わせ</a>
+                                </li>
+                                <li>
+                                    <a href="<?= home_url() ?>">HOME</a>
+                                </li>
+                                <li class="">
+                                    <a href="<?= home_url('/first') ?>">初めての方へ</a>
+                                </li>
+                                <li class="">
+                                    <a href="<?= home_url('/exterior') ?>">エクステリア</a>
+                                </li>
+                                <li class="">
+                                    <a href="<?= home_url('/garden') ?>">造園</a>
+                                </li>
+                                <li class="">
+                                    <a href="<?= home_url('/manage') ?>"><span class="YuGothic">剪</span>定・管理</a>
+                                </li>
+
+
+                                <li>
+                                    <a href="<?= home_url('/company') ?>">会社案内</a>
+                                </li>
+                                <li>
+                                    <a href="<?= home_url('/recruit') ?>">採用情報</a>
+                                </li>
+                                <li>
+                                    <a href="<?= home_url('/contact') ?>">お問い合わせ</a>
+                                </li>
+                            </ul>
+
+                            <ul class="header-icon ed-ul">
+                                <li>
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle" id="btn-toggle">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar top-bar"></span>
+                                            <span class="icon-bar middle-bar"></span>
+                                            <span class="icon-bar bottom-bar"></span>
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>

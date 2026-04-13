@@ -1,0 +1,47 @@
+.contact-page {
+	.form-contact-page {
+		margin: 20px 0;
+
+		.form-group {
+			label {
+				font-size: 16px;
+				line-height: 30px;
+				font-weight: 500;
+				color: $black;
+			}
+
+			input {
+				border: 3px solid #d3c8bb;
+				height: 60px;
+				border-radius: 30px;
+				background: #fff;
+				outline: none;
+				text-indent: 15px;
+				max-width: 100%;
+				width: 100%;
+			}
+
+			textarea {
+				border: 3px solid #d3c8bb;
+				border-radius: 30px;
+				background: #fff;
+				outline: none;
+				text-indent: 15px;
+				max-width: 100%;
+				width: 100%;
+				padding: 10px;
+			}
+		}
+
+
+
+		.wpcf7-response-output {
+			display: none !important;
+		}
+
+		div.wpcf7 .ajax-loader {
+			display: none !important;
+		}
+	}
+
+}

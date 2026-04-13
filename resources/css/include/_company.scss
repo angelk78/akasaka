@@ -1,0 +1,181 @@
+.company-page {
+	h3 {
+		color: $text;
+		font-family: YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+		font-weight: bold;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.img-company-1 {
+		margin-bottom: 30px;
+	}
+
+	.company-director-image {
+		img {
+			border-radius: 30px;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.txt-index-2 {
+		padding-left: 0 !important;
+	}
+
+	.txt-company-page {
+		position: relative;
+		padding-bottom: 30px;
+		margin-bottom: 35px;
+
+		img {
+			&.alignleft {
+				float: left;
+				margin-right: 25px;
+				margin-bottom: 30px;
+				border-radius: 30px;
+
+				@media(max-width: 767px) {
+					float: unset;
+					margin-right: unset;
+				}
+			}
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			background: url(../images/index/line.png);
+			width: 100%;
+			height: 11px;
+			bottom: -20px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		>p {
+			text-align: left;
+		}
+
+		>h5 {
+			text-align: right;
+			font-size: 24px;
+			line-height: 30px;
+			font-weight: bold;
+			margin-bottom: 0;
+			font-family: 'Arisawa';
+		}
+	}
+
+	.table-company {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+
+		>li {
+			font-size: 16px;
+			line-height: 30px;
+			color: $black;
+			margin-bottom: 20px;
+
+			>span {
+				display: inline-block;
+				vertical-align: text-top;
+
+				>span {
+					width: 200px;
+					display: inline-block;
+				}
+
+				&.set-col-1 {
+					width: 200px;
+					font-weight: 900;
+
+					@media (max-width: 768px) {
+						width: 98px;
+					}
+
+					@media (max-width: 552px) {
+						width: 100%;
+					}
+				}
+
+				&.set-col-2 {}
+			}
+		}
+	}
+}
+
+.title-sub-page {
+	>h2 {
+		position: relative;
+		color: $text;
+		text-align: center;
+		font-family: 'Aralet';
+		font-size: 24px;
+		line-height: 36px;
+		margin-top: 0;
+		margin-bottom: 40px;
+
+		>span {
+			font-weight: bold;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			background: url(../images/index/line.png);
+			width: 80%;
+
+			height: 11px;
+			bottom: -20px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}
+.single-head {
+	position: relative;
+	margin-bottom: 35px;
+	&::before {
+		content: "";
+    position: absolute;
+    background: url(../images/index/line.png);
+    width: 100%;
+    height: 11px;
+    bottom: -20px;
+    left: 0;
+	}
+	p {
+		display: inline-block;
+		margin-bottom: 0;
+		color: #723a1c;
+		font-weight: 700;
+	}
+	.date {
+		font-size: 14px;
+	}
+	.title {
+    font-size: 20px;
+	}
+}
+.single-content{
+	.alignnone, .aligncenter{
+		width: 80%;
+		margin: 0 auto 40px;
+		border-radius: 30px;
+		@media (max-width: 552px){
+			width: 100%;
+		}
+		
+	}
+	p{
+		>img{
+			display: block;
+			margin: auto;
+		}
+	}
+}

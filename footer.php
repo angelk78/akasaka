@@ -1,0 +1,137 @@
+<?php
+
+/**
+ * The template for displaying the footer
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package WordPress
+ * @subpackage akasaka
+ * @since 1.0.0
+ */
+
+?>
+<footer>
+    <div class="container ed-pd0">
+<p><a href="<?= home_url() ?>">多治見市</a>　<a href="<?= home_url('/tokishi') ?>">土岐市</a>　<a href="<?= home_url('/kanishi') ?>">可児市</a>　<a href="<?= home_url('/kasugai') ?>">春日井</a>　<a href="<?= home_url('/mizunami') ?>">瑞浪</a></p>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="footer-1">
+                    <img src="<?= ASSETS_PATH ?>resources/images/logo/logo.png" alt="">
+                    <ul>
+                        <li>株式会社 赤坂造園</li>
+                        <li>〒507-0054 岐阜県多治見市宝町11-7</li>
+                        <li class="visible-lg-inline-block">TEL: 0572-22-8386 FAX: 0572-25-8838</li>
+                        <li class="hidden-lg">TEL: <a href="tel:0572-22-8386">0572-22-8386</a> FAX:
+                            0572-25-8838</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="footer-2">
+                    <ul>
+                        <li><a href="<?= home_url('/privacy') ?>">個人情報保護</a></li>
+                        <li><a href="<?= home_url('/contact') ?>">お問い合わせ</a></li>
+                        <p>&copy; AKASAKA ZOUEN Co., Ltd.</p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</section>
+<!-- jQuery -->
+<script src="<?= ASSETS_PATH ?>resources/vendor/jquery/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js'></script>
+<script src="<?= ASSETS_PATH ?>resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?= ASSETS_PATH ?>resources/vendor/WOW-master/dist/wow.min.js"></script>
+<script src="<?= ASSETS_PATH ?>resources/vendor/slick/slick.js"></script>
+<script src="<?= ASSETS_PATH ?>resources/vendor/fancybox/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="<?= ASSETS_PATH ?>resources/js/main.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var categoryShow = document.querySelector(".category-list__show");
+        var hiddenElement = document.getElementById("hide");
+        var opacityElement = document.getElementById("opacity");
+
+        categoryShow.addEventListener("click", function(event) {
+            event.preventDefault();
+            hiddenElement.classList.toggle("isActive");
+            opacityElement.classList.toggle("opacity50");
+        });
+
+        document.addEventListener("click", function(event) {
+            var target = event.target;
+            if (!target.closest(".category-list__show")) {
+                hiddenElement.classList.remove("isActive");
+                opacityElement.classList.remove("opacity50");
+            }
+        });
+    });
+
+
+    //tabs link on restaurant
+    jQuery(document).ready(function($) {
+        $(".sect-restaurant--tabs--link a").on(
+            "click",
+            function(e) {
+                var currentAttrValue = $(this).attr("href");
+                // Change/remove current tab to active
+                $(this)
+                    .parent("li")
+                    .addClass("isActive")
+                    .siblings()
+                    .removeClass("isActive");
+                // Add/remove isActive class on post__tabs__content--item
+                $(".post_sub_cat__header" + currentAttrValue)
+                    .addClass("isActive")
+                    .siblings()
+                    .removeClass("isActive");
+                $(".post__tabs__content--item" + currentAttrValue)
+                    .addClass("isActive")
+                    .siblings()
+                    .removeClass("isActive");
+                $(".c-card_01__link").show();
+                e.preventDefault();
+            }
+        );
+
+        $(".banner-slider").slick({
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            centerMode: true,
+            adaptiveHeight: true,
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            centerPadding: "10%",
+            cssEase: 'linear',
+            responsive: [{
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    autoplay: true,
+                    adaptiveHeight: true,
+                    centerMode: false,
+                },
+            }, ],
+        });
+    });
+    const categoryData = "all";
+    const categoryElement = document.querySelector(`[data-category="${categoryData}"]`);
+
+    if (categoryElement) {
+        const parentLiElement = categoryElement.closest("li");
+        parentLiElement.style.setProperty("display", "none", "important");
+    }
+</script>
+</body>
+<?php wp_footer(); ?>
+
+</html>

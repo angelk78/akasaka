@@ -1,0 +1,52 @@
+{
+  "name": "akasaka",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "9fecfcfe680a469caedeeb40641a479f",
+      "css": "handshake-o",
+      "code": 62133,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "7222571caa5c15f83dcfd447c58d68d9",
+      "css": "search",
+      "code": 59392,
+      "src": "entypo"
+    },
+    {
+      "uid": "19e7b342a5e6bd0cd86de6d6208486a4",
+      "css": "leaf",
+      "code": 59393,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "d06b13f30947afbbdae6977413144183",
+      "css": "garden",
+      "code": 59418,
+      "src": "maki"
+    },
+    {
+      "uid": "c08a1cde48d96cba21d8c05fa7d7feb1",
+      "css": "doc-text-inv",
+      "code": 61788,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "9f7e588c66cfd6891f6f507cf6f6596b",
+      "css": "phone",
+      "code": 59395,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "2b8ea04aa0e500ae056f9c7934af18e6",
+      "css": "tree",
+      "code": 59394,
+      "src": "typicons"
+    }
+  ]
+}

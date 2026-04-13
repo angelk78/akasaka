@@ -1,0 +1,765 @@
+@font-face {
+  font-family: "Aralet";
+  src: url(../fonts/Aralet-kyohkan.svg);
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Aralet";
+  src: url(../fonts/Aralet-kyohkan.ttf);
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Aralet";
+  src: url(../fonts/Aralet-kyohkan.woff);
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "RiiCookieR";
+  src: url(../fonts/RiiCookieR..otf);
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "RiiCookieR";
+  src: url(../fonts/RiiCookieR..woff);
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Arisawa";
+  src: url(../fonts/arisawa.eot);
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Arisawa";
+  src: url(../fonts/arisawa.ttf);
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Arisawa";
+  src: url(../fonts/arisawa.woff);
+  font-style: normal;
+  font-weight: bold;
+}
+
+.gothic {
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3",
+    "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック",
+    "MS PGothic", sans-serif;
+}
+
+body {
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3",
+    "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック",
+    "MS PGothic", sans-serif;
+}
+.main {
+  overflow-x: hidden;
+}
+.wrapper {
+  background: $bg1;
+}
+
+p {
+  font-size: 16px;
+  line-height: 30px;
+  color: $black;
+  font-weight: 500;
+}
+
+@media (max-width: 552px) {
+  .flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+input,
+textarea,
+button {
+  outline: none !important;
+}
+
+.ed-lh1 {
+  line-height: 40px !important;
+}
+
+.YuGothic {
+  font-weight: 500;
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3",
+    "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック",
+    "MS PGothic", sans-serif;
+}
+
+.ed-padbt {
+  padding: 5px 35px 1px !important;
+}
+
+ul.ed-ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.5s ease;
+}
+
+@include down(md) {
+  .container {
+    width: 100%;
+  }
+}
+
+.ed-brc {
+  margin-top: 20px;
+
+  @media (max-width: 552px) {
+    margin-top: 5px;
+  }
+
+  .breadcrumb {
+    background: transparent;
+    margin-bottom: 0;
+    padding: 0px 0 0;
+
+    @media (max-width: 768px) {
+      text-align: left;
+    }
+
+    > li {
+      color: #fff;
+      font-size: 12px;
+      line-height: 30px;
+      font-weight: bold;
+
+      > a {
+        color: #fff;
+      }
+
+      & + li:before {
+        content: "\003e";
+        font-weight: bold;
+        color: #fff;
+      }
+    }
+
+    .breadcrumb__dynamic {
+      display: inline-block;
+      .post__tabs__content--item {
+        display: none;
+      }
+      .isActive {
+        display: block !important;
+      }
+      ul {
+        padding: 0 !important;
+        &:first-child {
+          display: none !important;
+        }
+      }
+      p {
+        margin: 0;
+        font-size: 12px;
+        color: #fff;
+        line-height: 30px;
+        font-weight: 700;
+        &:before {
+          content: "\003e";
+          font-weight: bold;
+          color: #fff;
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+}
+
+.page-content {
+  img {
+    max-width: 100%;
+  }
+}
+
+.flex-mid {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.pd-left-0 {
+  padding-left: 0;
+}
+
+.pd-right-0 {
+  padding-right: 0;
+}
+
+.mg-bottom-15 {
+  margin-bottom: 15px;
+}
+
+.flex-nowrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.d-pc {
+  display: block;
+}
+
+.d-mb {
+  display: none;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+@media (max-width: 767px) {
+  .d-pc {
+    display: none;
+  }
+
+  .d-mb {
+    display: block;
+    text-align: left !important;
+  }
+}
+
+.banner {
+  .item {
+    a {
+      display: block;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.slider {
+  width: 100%;
+}
+
+.slick-slide {
+  margin: 0px 20px;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+.slick-slide {
+  transition: all ease-in-out 0.3s;
+  opacity: 1;
+}
+
+.slick-active {
+  opacity: 1;
+}
+
+.slick-current {
+  opacity: 1;
+}
+
+.ed-checkbox {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 30px;
+  color: $black;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-weight: 500;
+
+  > a {
+    color: $black;
+    text-decoration: underline;
+  }
+}
+
+/* Hide the browser's default checkbox */
+.ed-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.ed-checkbox .checkmark {
+  position: absolute;
+  top: 4px;
+  left: 0px;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 2px solid #d3c8bb;
+  transition: all 0.5s ease;
+}
+
+/* On mouse-over, add a grey background color */
+.ed-checkbox:hover input ~ .checkmark {
+  background-color: #d3c8bb;
+}
+
+/* When the checkbox is checked, add a blue background */
+.ed-checkbox input:checked ~ .checkmark {
+  background-color: #fff;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.ed-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.ed-checkbox .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #434343;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.c-three-dots-loader {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: -20px 24px 20px;
+  animation-fill-mode: both;
+  animation: three-dots-loader-animation 2s infinite ease-in-out;
+  animation-delay: -0.16s;
+  color: tomato;
+}
+
+.c-three-dots-loader:before,
+.c-three-dots-loader:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  animation: three-dots-loader-animation 2s infinite ease-in-out;
+  border-radius: 50%;
+}
+
+.c-three-dots-loader:before {
+  left: -24px;
+  animation-delay: -0.32s;
+}
+
+.c-three-dots-loader:after {
+  left: 24px;
+}
+
+@keyframes three-dots-loader-animation {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 20px 0 -24px;
+  }
+
+  40% {
+    box-shadow: 0 20px 0 0;
+  }
+}
+
+@-webkit-keyframes three-dots-loader-animation {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 20px 0 -24px;
+  }
+
+  40% {
+    box-shadow: 0 20px 0 0;
+  }
+}
+
+@-moz-keyframes three-dots-loader-animation {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 20px 0 -24px;
+  }
+
+  40% {
+    box-shadow: 0 20px 0 0;
+  }
+}
+
+.btn-default {
+  background: $text;
+  color: #fff;
+  padding: 8px 70px;
+  font-size: 16px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.5s ease;
+  outline: none;
+
+  &:hover {
+    background: $text;
+    color: #fff;
+    opacity: 0.5;
+  }
+
+  &:focus {
+    background: $text;
+    color: #fff;
+    opacity: 1;
+  }
+}
+
+.btn-default[disabled]:hover {
+  background: $text;
+  color: #fff;
+  opacity: 0.5;
+}
+
+.page-loader {
+  position: fixed;
+  background: #fff;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 9998;
+}
+
+.loader {
+  position: absolute;
+  border-left: 2px solid #64aa0e;
+  border-top: 2px solid rgba(245, 245, 245, 0.8);
+  border-right: 2px solid rgba(245, 245, 245, 0.8);
+  border-bottom: 2px solid rgba(245, 245, 245, 0.8);
+  height: 46px;
+  width: 46px;
+  left: 50%;
+  top: 50%;
+  margin: -23px 0 0 -23px;
+  text-indent: -9999em;
+  font-size: 10px;
+  z-index: 9999;
+  -webkit-animation: load 0.8s infinite linear;
+  -moz-animation: load 0.8s infinite linear;
+  ms-animation: load 0.8s infinite linear;
+  o-animation: load 0.8s infinite linear;
+  animation: load 0.8s infinite linear;
+}
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+}
+
+@-webkit-keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto !important;
+}
+
+.alignright {
+  float: right;
+  margin: 5px 0 20px 20px !important;
+}
+
+.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0 !important;
+}
+
+a img.alignright {
+  float: right;
+  margin: 5px 0 20px 20px !important;
+}
+
+a img.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0 !important;
+}
+
+a img.aligncenter {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%;
+  /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center;
+}
+
+.wp-caption.alignnone {
+  margin: 5px 20px 20px 0 !important;
+}
+
+.wp-caption.alignleft {
+  margin: 5px 20px 20px 0 !important;
+}
+
+.wp-caption.alignright {
+  margin: 5px 0 20px 20px !important;
+}
+
+.wp-caption img {
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 98.5%;
+  padding: 0;
+  width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+.archive-page {
+  .bg-page-sub {
+    background: url("../images/index/0128_first.jpg") no-repeat;
+    background-size: cover;
+    height: 220px;
+    background-position: bottom;
+    margin-top: -160px;
+  }
+
+  .page-first-1 {
+    margin-bottom: 50px;
+
+    .title-page-2 {
+      position: relative;
+      z-index: 90;
+      margin-top: -60px;
+      padding-bottom: 25px;
+
+      > h2 {
+        margin-bottom: 0;
+      }
+
+      @media (max-width: 552px) {
+        padding-bottom: 27px;
+        padding-left: 0;
+        margin-top: -75px;
+
+        > h2 {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .ed-index-2 {
+      padding-top: 40px;
+      padding-bottom: 30px;
+
+      .img-index-2 {
+        margin-bottom: 30px;
+
+        > img {
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .page-first-2 {
+    .box-ed-1 {
+      position: relative;
+      margin-bottom: 45px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        background: url(../images/index/line.png);
+        width: 100%;
+        height: 11px;
+        bottom: -20px;
+        left: 0;
+      }
+
+      &:last-child {
+        &:before {
+          display: none;
+        }
+      }
+
+      .set-number {
+        float: left;
+        margin-right: 30px;
+
+        > span {
+          display: inline-block;
+          color: #fff;
+          background: $text;
+          width: 65px;
+          height: 65px;
+          line-height: 62px;
+          text-align: center;
+          font-size: 36px;
+          font-weight: bold;
+          border-radius: 50%;
+          font-family: "Aralet";
+
+          > i {
+            font-size: 28px;
+
+            &.icon-handshake-o {
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+
+      .set-title-desc {
+        display: table;
+
+        > h2 {
+          margin-top: 0;
+          font-size: 24px;
+          line-height: 30px;
+          color: $text;
+          font-family: "Aralet";
+
+          > span {
+            font-size: 18px;
+
+            &.gothic {
+              font-size: 24px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
