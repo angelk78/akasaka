@@ -38,6 +38,18 @@ if (is_home()) {
     $title = !empty($post->post_title) ? $post->post_title : '';
     $description = '';
 }
+
+$logo_alt = '';
+
+if (is_page('tokishi')) {
+    $logo_alt = '赤坂造園 | 土岐市の外構・エクステリア・造園';
+} elseif (is_page('kasugai')) {
+    $logo_alt = '赤坂造園 | 春日井市の外構・エクステリア・造園';
+} elseif (is_page('mizunami')) {
+    $logo_alt = '赤坂造園 | 瑞浪市の外構・エクステリア・造園';
+} elseif (is_page('kanishi')) {
+    $logo_alt = '赤坂造園 | 可児市の外構・エクステリア・造園';
+}
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -483,7 +495,7 @@ if (is_home()) {
                     <div class="container padding-0">
                         <div class="navbar-collapse1">
                             <div class="logo">
-                                <a href="<?= home_url() ?>"><img src="<?= ASSETS_PATH ?>resources/images/logo/logo2.png"></a>
+                                <a href="<?= home_url() ?>"><img src="<?= ASSETS_PATH ?>resources/images/logo/logo2.png" alt="<?= esc_attr($logo_alt); ?>"></a>
                                 <p>
                                     株式会社 赤坂造園　TEL / 0572-22-8386 <br>
                                     岐阜県多治見市宝町11丁目7番地

@@ -23,10 +23,142 @@ get_header();
                 </div>
                 <?= breadcrumbs(); ?>
             </div>
+
+                <div style="margin-bottom:100px">
+                    <div class="index-2">
+                        <div class="container">
+                            <div class="row ed-index-2">
+                                <div class="flower-1"></div>
+                                <div class="flower-2"></div>
+                                <div class="flower-3"></div>
+                                <div class="flower-4"></div>
+                                <div class="flower-5"></div>
+                                <div class="flower-6"></div>
+                                <div class="flower-7"></div>
+                                <div class="flower-8"></div>
+                                <div class="title-bg1">
+                                    <h2>「家のまわり」に関わる仕事を行っている<br>株式会社赤坂造園です</h2>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="img-index-2">
+                                        <!--<img src="<?= ASSETS_PATH ?>resources/images/index/0108_01.png" class="img-responsive" alt="">-->
+                                        <picture class="img-responsive">
+                                            <source media="(max-width: 767px)" srcset="<?= ASSETS_PATH ?>resources/images/thumb01.jpg"><img src="<?= ASSETS_PATH ?>resources/images/index/0108_01.png">
+                                        </picture>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="txt-index-2">
+                                        <p>新築外構工事、エクステリア工事、お庭のリフォームを始め、造園工事一式、剪定、伐採、草刈などの緑地管理、植栽や樹木移植などの緑化工事を主に行っております。官公庁が発注する工事や委託、企業やマンションの緑地管理、個人宅のエクステリア工事からお庭のお手入れなど幅広く対応いたします。</p>
+                                        <p>弊社では、熟練された従業員の技術は元より、作業に欠かせない特殊車両や建設機械、小型機械などを多く保有しております。適切な機械の使用は工期の短縮、コストの削減に繋がるからです。また弊社は、自社で職人を抱えており、下請けを使う事がないので、他社よりコストを低く抑えることができます。自社のデザイナー、スタッフ、職人が責任を持って設計から施工までいたします。皆様の家の周りのことでお手伝いできることがございましたら、幸いです。</p>
+                                    </div>
+                                </div>
+                                <div class="manufacturers">
+                                    <h2>取り扱いメーカー</h2>
+                                    <span>下記専門メーカーの商品を取り扱っています。</span>
+                                    <div class="manu_images">
+                                        <img src="<?= ASSETS_PATH ?>resources/images/manufacturers/01.png" alt="">
+                                        <img src="<?= ASSETS_PATH ?>resources/images/manufacturers/02.png" alt="">
+                                        <img src="<?= ASSETS_PATH ?>resources/images/manufacturers/03.png" alt="">
+                                        <img src="<?= ASSETS_PATH ?>resources/images/manufacturers/04.png" alt="">
+                                        <img src="<?= ASSETS_PATH ?>resources/images/manufacturers/05.png" alt="">
+                                        <img src="<?= ASSETS_PATH ?>resources/images/manufacturers/06.png" alt="">
+                                        <img src="<?= ASSETS_PATH ?>resources/images/manufacturers/07.png" alt="">
+                                        <img src="<?= ASSETS_PATH ?>resources/images/manufacturers/08.png" alt="">
+                                        <img src="<?= ASSETS_PATH ?>resources/images/manufacturers/09.png" alt="">
+                                        <img src="<?= ASSETS_PATH ?>resources/images/manufacturers/10.png" alt="">
+                                        <img src="<?= ASSETS_PATH ?>resources/images/manufacturers/11.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="index-3">
+                        <div class="container">
+                            <div class="row flexwrap">
+                                <div class="title-page-1 col-md-12 col-xs-12">
+                                    <h2>できること</h2>
+                                </div>
+
+                                <div class="col-md-3 col-xs-6">
+                                    <a href="<?= home_url('/exterior#shinchikugaikou') ?>" class="box-index-3">
+                                        <div class="img-box-3">
+                                            <img src="<?= ASSETS_PATH ?>resources/images/index/1.jpg" class="img-responsive" alt="">
+                                        </div>
+                                        <h3>新築外構工事</h3>
+                                        <p>理想のお庭を考えます！外構工事は、別発注が断然お値打ちです！</p>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-xs-6">
+                                    <a href="<?= home_url('/exterior#oniwarifoumu') ?>" class="box-index-3">
+                                        <div class="img-box-3">
+                                            <img src="<?= ASSETS_PATH ?>resources/images/index/2.jpg" class="img-responsive" alt="">
+                                        </div>
+                                        <h3>お庭リフォーム</h3>
+                                        <p>現状のお庭に不満や問題点はありませんか？家周りの事でしたらご相談を！</p>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-xs-6">
+                                    <a href="<?= home_url('/exterior#ekusuteriakouji') ?>" class="box-index-3">
+                                        <div class="img-box-3">
+                                            <img src="<?= ASSETS_PATH ?>resources/images/index/3.jpg" class="img-responsive" alt="">
+                                        </div>
+                                        <h3>エクステリア工事</h3>
+                                        <p>ウッドデッキ、カーポート、フェンスどのメーカーも取り扱い可能です！</p>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-xs-6">
+                                    <a href="<?= home_url('/garden#sakutei-tsuboniwa') ?>" class="box-index-3">
+                                        <div class="img-box-3">
+                                            <img src="<?= ASSETS_PATH ?>resources/images/index/4.jpg" class="img-responsive" alt="">
+                                        </div>
+                                        <h3>作庭、坪庭</h3>
+                                        <p>希少価値のあり、愛着が湧く古風なお庭を作ってみませんか！</p>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-xs-6">
+                                    <a href="<?= home_url('/garden#shokuju-ishoku') ?>" class="box-index-3">
+                                        <div class="img-box-3">
+                                            <img src="<?= ASSETS_PATH ?>resources/images/index/5.jpg" class="img-responsive" alt="">
+                                        </div>
+                                        <h3>植樹、移植</h3>
+                                        <p>お家のシンボルツリーほしい、大事にしてきた樹木の移動！緑は人の心を癒します。</p>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-xs-6">
+                                    <a href="<?= home_url('/garden#shibafu-jinkoushiba') ?>" class="box-index-3">
+                                        <div class="img-box-3">
+                                            <img src="<?= ASSETS_PATH ?>resources/images/index/6.jpg" class="img-responsive" alt="">
+                                        </div>
+                                        <h3>芝生、人工芝</h3>
+                                        <p>お子様、愛犬が大喜び間違いなし！緑あふれる遊び場の完成です！</p>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-xs-6">
+                                    <a href="<?= home_url('/manage#sentei-bassai') ?>" class="box-index-3">
+                                        <div class="img-box-3">
+                                            <img src="<?= ASSETS_PATH ?>resources/images/index/7.jpg" class="img-responsive" alt="">
+                                        </div>
+                                        <h3>剪定、伐採</h3>
+                                        <p>剪定は樹木を育てていく上で欠かせないものです！伐採も得意としております！</p>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-xs-6">
+                                    <a href="<?= home_url('/manage#kusakari') ?>" class="box-index-3">
+                                        <div class="img-box-3">
+                                            <img src="<?= ASSETS_PATH ?>resources/images/index/8.jpg" class="img-responsive" alt="">
+                                        </div>
+                                        <h3>草刈</h3>
+                                        <p>草はお庭の天敵です！少量から大規模の草刈を機械を使い分けて行います！</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             <div class="container tokishi-container">
                 <div class="row ed-index-2">
-                    <div class="flower-1"></div>
-                    <div class="flower-2"></div>
                     <div class="flower-4"></div>
                     <div class="flower-5"></div>
                     <div class="flower-6"></div>
@@ -162,66 +294,72 @@ get_header();
                         </div>
                         <div class="customer-feedback-list">
                             <div class="container-feedback">
-                                <div class="customer-container">
-                                    <div class="customer-item">
-                                        <p class="title">リフォームする時がきたら<br />またお願いしたいです！</p>
-                                        <span></span>
-                                        <p class="desc">土岐市で新築の外構でお世話になりました。他社さんの見積りよりも安く、また細かい打合せも何度も行って頂き、完成したフェンス、テラス、タイルデッキについても全て満足いく内容でした。</p>
-                                    </div>
-                                </div>
-                                <div class="customer-container">
-                                    <div class="customer-item">
-                                        <p class="title">対応が早く、丁寧で頼んでとても良かったです！</p>
-                                        <span></span>
-                                        <p class="desc">折板カーポートを赤坂造園さんにお願いしました。カーポートを付けてみて、夏はその下でバーベキューも出来るし、雨にも濡れないし、もっと早く付けていれば良かったです。<br />また外構をやる時はお願いしたいです。</p>
-                                    </div>
-                                </div>
-                                <div class="customer-container">
-                                    <div class="customer-item">
-                                        <p class="title">他社と比較して、とてもお安く対応していただきました！</p>
-                                        <span></span>
-                                        <p class="desc">土岐市に済んでおり、新築外構工事をお願いしました。施工も丁寧な作業でした。<br />また、現場の職人さんも急な要望等にも応えていただき、ありがたかったです！<br />この度はありがとうございました。</p>
-                                    </div>
-                                </div>
-                                <div class="customer-container">
-                                    <div class="customer-item">
-                                        <p class="title">無事予算内かつ希望の外構とすることができました。</p>
-                                        <span></span>
-                                        <p class="desc">少ない予算に対し、経験豊富なアドバイスをいただけたのもよかったです。<br />質もよくとても親切丁寧に対応していただけるので、色々な方に是非ともおすすめしたいお店です。また、外構関連で工事あれば、お願いしたいです。</p>
-                                    </div>
-                                </div>
-                                <div class="customer-container">
-                                    <div class="customer-item">
-                                        <p class="title">またお世話になりたいと思える会社様でした！</p>
-                                        <span></span>
-                                        <p class="desc">土岐市の友人から紹介していただき、アプローチ工事、カーポート、駐車場土間コンクリート、外壁フェンス工事等一式施工していただきました。<br />工事中に関しても、何一つの不満もなく工事終了までしっかりと施工していただけました。</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-tokishi-page">
-                            <div class="col">
-                                <p>エクステリアは健康的でご家族が笑いあえる場を提供できます。建物があれば暮らすことが出来ます。朝起きてお仕事に行き、疲れて帰ってきて、翌日の朝起きてお仕事へ。淡々とした毎日の中にエクステリアで疲れを癒す空間と、ご家族での過ごせる場所を造ることが出来ます。</p>
-                            </div>
-                            <div class="col">
-                                <img src="<?= ASSETS_PATH ?>resources/images/tokishi/tokishi-5.png" class="" alt="">
-                            </div>
-                        </div>
-                        <div class="tokishi-text">
-                            <p>想像してください。<br />お仕事から帰ってきたときに、暖かいライティングされた玄関を見たとき。<br>リビングで一息ついたときに、ふと目に入る緑に満ちたガーデンを見たとき。<br>朝のコーヒーを家の中のテーブルではなく、お庭のデッキの上で飲む一杯。<br>これらすべてがエクステリアには実現できます。</p>
-                            <p>内と外との繋がりにこそ、快適な住まいづくりのポイントが隠されているのです。お客様にガーデンでの暮らしを、幸せな笑顔とご家族の喜び、楽しさがあふれる空間としていただきたい。<br />そのための知恵と汗を出しながらお客様と接していく土岐市で役立つ集団を目指しています。</p>
-                        </div>
 
-                        <div class="col-sm-12">
-                            <div class="title-sub-page">
-                                <h2><span class="gothic">土岐市対応エリア</h2>
+                            <?php
+                            $args = array(
+                                'post_type' => 'customer_review',
+                                'posts_per_page' => -1,
+                                'meta_query' => array(
+                                    array(
+                                        'key' => 'location',
+                                        'value' => 'tokishi',
+                                        'compare' => '='
+                                    )
+                                )
+                            );
+
+                            $reviews = new WP_Query($args);
+
+                            if ($reviews->have_posts()):
+                                while ($reviews->have_posts()): $reviews->the_post();
+
+                                $name = get_field('name');
+                                $link = get_field('name_link');
+                                $days = get_field('days_ago');
+                                $rating = get_field('rating');
+                            ?>
+
+                            <div class="customer-container">
+                                <div class="customer-item google-review">
+                                    <p class="title"><?php the_title(); ?></p>
+                                    <span></span>
+                                    <div class="review-header">
+                                        <div class="left">
+                                            <?php if (has_post_thumbnail()): ?>
+                                                <img class="profile" src="<?php the_post_thumbnail_url(); ?>" />
+                                            <?php else: ?>
+                                                <div class="profile placeholder"></div>
+                                            <?php endif; ?>
+                                            <div class="review-meta">
+                                                <a href="<?php echo esc_url($link); ?>" target="_blank" class="name">
+                                                    <?php echo esc_html($name); ?>
+                                                </a>
+                                                <p class="days"><?php echo esc_html($days); ?>日前</p>
+                                            </div>
+                                        </div>
+                                        <img class="google-logo" src="<?php echo get_template_directory_uri(); ?>/resources/images/google_logo.png" />
+                                    </div>
+
+                                    <!-- STARS -->
+                                    <div class="stars">
+                                        <?php for ($i = 0; $i < 5; $i++): ?>
+                                            <svg class="star <?php echo ($i < $rating) ? 'filled' : 'empty'; ?>" viewBox="0 0 24 24">
+                                                <path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.782 1.402 8.177L12 18.896l-7.336 3.874 1.402-8.177L.132 9.211l8.2-1.193z"/>
+                                            </svg>
+                                        <?php endfor; ?>
+                                    </div>
+                                    
+
+                                    <!-- DESCRIPTION -->
+                                    <p class="desc"><?php the_content(); ?></p>
+
+                                </div>
+                            </div>
+
+                            <?php endwhile; wp_reset_postdata(); endif; ?>
+
                             </div>
                         </div>
-                        <div class="txt-index-2 tokishi-desc">
-                            <p>以下の土岐市の町が対応エリアです。（対応に入っていなくてもご相談下さい！）</p>
-                            <p>泉池ノ上町　泉岩畑町　泉梅ノ木町　泉大島町　泉大坪町　泉大沼町　泉が丘町　泉北山町　泉郷町　泉島田町　泉神栄町　泉町大富　泉町河合　泉町久尻　泉町定林寺　泉寺下町　泉寺田町　泉中窯町　泉仲森町　泉西窯町　泉西原町　泉西山町　泉東窯町　泉日之出町　泉明治町　泉森下町　下石阿庄町　下石町　下石陶史台　曽木町　駄知町　妻木町　妻木平成町　鶴里町柿野　鶴里町細野　土岐ヶ丘　土岐口北町　土岐口中町　土岐口南町　土岐津町高山　土岐津町土岐口　肥田浅野朝日町　肥田浅野梅ノ木町　肥田浅野笠神町　肥田浅野双葉町　肥田浅野元町　肥田浅野矢落町　肥田町浅野　肥田町肥田　御幸町</p>
-                        </div>
-
                     </div>
                 </div>
             </div>

@@ -402,3 +402,37 @@ function save_voice_ratings($post_id)
     }
 }
 add_action('save_post', 'save_voice_ratings');
+
+//customer reviews
+function create_customer_reviews_cpt() {
+    register_post_type('customer_review', array(
+        'labels' => array(
+            'name' => 'Customer Reviews',
+            'singular_name' => 'Customer Review'
+        ),
+        'public' => true,
+        'has_archive' => false,
+        'rewrite' => array(
+            'slug' => '',
+            'with_front' => false
+        ),
+        'menu_icon' => 'dashicons-star-filled',
+        'supports' => array('title', 'editor', 'thumbnail'),
+    ));
+}
+add_action('init', 'create_customer_reviews_cpt');
+
+add_filter('post_type_link', function($post_link, $post) {
+    if ($post->post_type === 'customer_review') {
+        return home_url('/' . $post->ID . '/');
+    }
+    return $post_link;
+}, 10, 2);
+
+add_action('init', function() {
+    add_rewrite_rule(
+        '^([0-9]+)/?$',
+        'index.php?post_type=customer_review&p=$matches[1]',
+        'top'
+    );
+});

@@ -3279,21 +3279,21 @@ border-right: 2px solid #434343;
 }
 .tokishi-page .customer-feedback-list .customer-item {
   background-color: #fff;
-  border: 3px solid #64aa0e;
+  border: 2px solid #c0c0c0;
   border-radius: 10px;
   padding: 10px;
 }
 .tokishi-page .customer-item .title {
   font-weight: bold;
-  color: #4b8701;
+  color: #333333;
   line-height: 25px;
 }
 .tokishi-page .customer-item span {
-  background-color: #64aa0e;
+  background-color: #c0c0c0;
   width: 100%;
   height: 3px;
   display: block;
-  margin: 8px 0 14px;
+  margin: 8px 0 10px;
 }
 .tokishi-page .customer-item .desc {
   font-size: 15px;
@@ -3304,6 +3304,108 @@ border-right: 2px solid #434343;
   max-width: 800px;
   margin: 0 auto;
 }
+
+.customer-container .google-review {
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.customer-container .review-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.customer-container .review-header .left {
+  display: flex;
+  align-items: center;
+}
+
+.customer-container .profile {
+  width: 46px;
+  height: 47px;
+  border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover;
+}
+
+.customer-container .review-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.customer-container .review-meta .name {
+  font-weight: bold;
+  color: #003dbd;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.customer-container .review-meta .days {
+  font-size: 14px;
+  color: #888;
+  margin: 0px;
+}
+
+.customer-container .google-logo {
+  width: 18px;
+  margin-top: 5px;
+  height: 18px;
+}
+
+.customer-container .stars span,
+.customer-container .star {
+  background: none !important;
+  height: auto !important;
+  display: inline-block !important;
+  margin: 0 !important;
+  border: none !important;
+  line-height: normal !important;
+}
+.customer-container .stars {
+  width: fit-content;
+  display: flex;
+  gap: 6px;
+  font-size: 16px;
+  margin: 6px 0;
+}
+.customer-container .star {
+  width: 16px;
+  height: 16px;
+}
+.customer-container .star.filled {
+  stroke: #fb8e28; 
+  stroke-width: 2;
+  fill: #fb8e28;
+}
+.customer-container .star.empty {
+  fill: none;
+  stroke: #fb8e28; 
+  stroke-width: 2;
+}
+
+.customer-container .google-review .title {
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.customer-container .google-review .desc {
+  font-size: 14px;
+  line-height: 22px;
+  color: #444;
+}
+
+.customer-container .profile.placeholder {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #ddd;
+}
+
 @media (min-width: 1200px) {
   .tokishi-container {
     max-width: 900px;
