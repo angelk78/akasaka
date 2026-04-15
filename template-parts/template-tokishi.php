@@ -299,6 +299,8 @@ get_header();
                             $args = array(
                                 'post_type' => 'customer_review',
                                 'posts_per_page' => -1,
+                                'orderby' => 'menu_order',
+                                'order' => 'ASC',
                                 'meta_query' => array(
                                     array(
                                         'key' => 'location',

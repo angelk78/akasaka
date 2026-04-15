@@ -417,7 +417,7 @@ function create_customer_reviews_cpt() {
             'with_front' => false
         ),
         'menu_icon' => 'dashicons-star-filled',
-        'supports' => array('title', 'editor', 'thumbnail'),
+        'supports' => array('title', 'editor', 'thumbnail', 'page-attributes'),
     ));
 }
 add_action('init', 'create_customer_reviews_cpt');
@@ -435,4 +435,192 @@ add_action('init', function() {
         'index.php?post_type=customer_review&p=$matches[1]',
         'top'
     );
+});
+
+add_action('restrict_manage_posts', function() {
+    global $typenow;
+
+    if ($typenow == 'customer_review') {
+        $selected = $_GET['location'] ?? '';
+        ?>
+        <select name="location" id="location-filter">
+            <option value="">Select Location</option>
+            <option value="tokishi" <?php selected($selected, 'tokishi'); ?>>Tokishi</option>
+            <option value="kanishi" <?php selected($selected, 'kanishi'); ?>>Kanishi</option>
+            <option value="kasugai" <?php selected($selected, 'kasugai'); ?>>Kasugai</option>
+            <option value="mizunami" <?php selected($selected, 'mizunami'); ?>>Mizunami</option>
+        </select>
+        <?php
+    }
+});
+
+add_action('admin_footer-edit.php', function() {
+    global $typenow;
+
+    if ($typenow !== 'customer_review') return;
+    ?>
+    <script>
+        jQuery(function($) {
+            $('#location-filter').on('change', function() {
+                var location = $(this).val();
+
+                let url = new URL(window.location.href);
+
+                if (location) {
+                    url.searchParams.set('location', location);
+                } else {
+                    url.searchParams.delete('location');
+                }
+
+                window.location.href = url.toString();
+            });
+        });
+    </script>
+    <?php
+});
+
+add_action('pre_get_posts', function($query) {
+    global $pagenow;
+
+    if (
+        is_admin() &&
+        $pagenow === 'edit.php' &&
+        $query->get('post_type') === 'customer_review' &&
+        $query->is_main_query()
+    ) {
+        // ONLY filter when location is selected
+        if (!empty($_GET['location'])) {
+            $query->set('meta_query', array(
+                array(
+                    'key' => 'location',
+                    'value' => sanitize_text_field($_GET['location']),
+                    'compare' => '='
+                )
+            ));
+        }
+
+        // Always sort by menu_order
+        $query->set('orderby', 'menu_order');
+        $query->set('order', 'ASC');
+    }
+});
+
+add_action('admin_head', function() {
+    echo '<style>
+        #post-query-submit { display:none !important; }
+    </style>';
+});
+
+add_action('admin_enqueue_scripts', function($hook) {
+    if ($hook !== 'edit.php') return;
+
+    if (!isset($_GET['post_type']) || $_GET['post_type'] !== 'customer_review') return;
+
+    wp_enqueue_script('jquery-ui-sortable');
+
+    $location = isset($_GET['location']) ? $_GET['location'] : '';
+
+    wp_add_inline_script('jquery-ui-sortable', '
+jQuery(window).on("load", function() {
+
+    var location = "' . esc_js($location) . '";
+
+    if (!location) {
+
+        jQuery(".wrap h1").after(
+            "<div class=\"notice notice-warning\"><p><strong>⚠️ Select a location first to enable sorting</strong></p></div>"
+        );
+
+        jQuery(".drag-handle").css({
+            opacity: "0.3",
+            cursor: "not-allowed"
+        });
+
+        return;
+    }
+
+    var tbody = jQuery("#the-list");
+
+    // 🔥 IMPORTANT: delay to ensure WP finished rendering
+    setTimeout(function() {
+
+        tbody.sortable({
+            items: "> tr.type-customer_review",
+            handle: ".drag-handle",
+            cursor: "move",
+            axis: "y",
+            tolerance: "pointer",
+            cancel: "a, button, input, textarea, select",
+            placeholder: "sortable-placeholder",
+
+            start: function(e, ui) {
+                ui.placeholder.height(ui.item.height());
+            },
+
+            update: function() {
+
+                var order = [];
+
+                tbody.find("tr.type-customer_review").each(function(index) {
+                    order.push({
+                        id: jQuery(this).attr("id").replace("post-", ""),
+                        order: index
+                    });
+                });
+
+                jQuery.post(ajaxurl, {
+                    action: "save_review_order",
+                    order: order
+                });
+            }
+        });
+
+    }, 300); // 🔥 delay fixes WP conflict
+
+});
+');
+});
+
+add_action('wp_ajax_save_review_order', function() {
+    foreach ($_POST['order'] as $item) {
+        wp_update_post(array(
+            'ID' => intval($item['id']),
+            'menu_order' => intval($item['order'])
+        ));
+    }
+    wp_die();
+});
+
+add_filter('manage_customer_review_posts_columns', function($columns) {
+    $columns = array_merge(
+        array('drag' => '↕'),
+        $columns
+    );
+    return $columns;
+});
+
+add_action('manage_customer_review_posts_custom_column', function($column, $post_id) {
+    if ($column === 'drag') {
+        echo '<span class="drag-handle">☰</span>';
+    }
+}, 10, 2);
+
+add_action('admin_head', function() {
+    ?>
+    <style>
+        .column-drag {
+            width: 40px;
+            text-align: center;
+        }
+        .drag-handle {
+            cursor: move;
+            font-size: 16px;
+        }
+        .sortable-placeholder {
+            background: #f0f0f0;
+            border: 2px dashed #bbb;
+            height: 60px;
+        }
+    </style>
+    <?php
 });
